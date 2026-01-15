@@ -1,24 +1,19 @@
 import { Router } from 'express';
 import { StatusCodes } from 'http-status-codes'
+
+import { CidadesController } from '../controllers';
+
+
+
 const router =  Router();
 
-
-router.post('/teste', (req, res) => {
-  console.log(req.body);
-  if (req.body.id) {
-    console.log(req.body.id);
-  }
-  else {
-    console.log('ID não fornecido');
-    return res.status(400).json({ error: 'ID não fornecido' });
-  }
-
-  return res.status(StatusCodes.UNAUTHORIZED).json(req.body);
-});
-
-router.get('/teste-get', (req, res) => {
+router.get('/', (req, res) => {
   return res.send('Olá, GET DEV!');
 });
+
+
+router.post('/cidades', CidadesController.create);
+
 
 
 
