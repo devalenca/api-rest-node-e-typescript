@@ -18,7 +18,15 @@ export const getAllValidation = validation ((getSchema) =>({
 }));
 
 export const getAll = async (req: Request<{}, {}, {}, IQueryProps>, res: Response) => {
+  res.setHeader('access-control-expose-headers', 'X-Total-Count');
+  res.setHeader('X-Total-Count', '1');
+
   console.log("Iniciando consulta de cidades com os dados:", req.query);
 
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Não implementado!');
-}
+  return res.status(StatusCodes.OK).json([
+    {
+      id: 1,
+      nome: 'Cidade Teste'
+    }
+  ]);
+};

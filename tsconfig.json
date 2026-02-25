@@ -14,7 +14,10 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["."],
-  "exclude": ["node_modules", "build"]
+  "exclude": [
+    "./jest.config.ts",
+    "./node_modules",
+    "./tests",
+    "./build"]
 }
 
