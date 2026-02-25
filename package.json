@@ -7,7 +7,9 @@
   "private": false,
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "production": "node ./build/index.js",
+    "postinstall": "tsc"
   },
   "dependencies": {
     "-": "^0.0.1",
@@ -33,5 +35,8 @@
     "globals": "^17.0.0",
     "supertest": "^7.2.2",
     "typescript-eslint": "^8.52.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
